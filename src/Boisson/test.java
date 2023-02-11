@@ -10,20 +10,26 @@ public class test {
 		
 
 		
-		        Scanner sc = new Scanner(System.in);
-		        int t = sc.nextInt();
-		        String codeforces = "codeforces";
-		        while (t-- > 0) {
-		            char c = sc.next().charAt(0);
-		            if (codeforces.indexOf(c) >= 0) {
-		                System.out.println("YES");
-		            } else {
-		                System.out.println("NO");
-		            }
-		        }
-		        sc.close();
-		    }
-		
+		 Scanner sc = new Scanner(System.in);
+    	 int t = sc.nextInt();
+         while (t-- > 0) {
+             long n = sc.nextLong();
+             boolean found = false;
+             for (int i = 1; i <= Math.sqrt(n); i++) {
+                 if (n % i == 0) {
+                     long y = n / i;
+                     if (y > i && (i * y + i + y) == n) {
+                         System.out.println(i + " " + y);
+                         found = true;
+                         break;
+                     }
+                 }
+             }
+             if (!found) {
+                 System.out.println(-1);
+             }
+         }
+     }
 
 	
 	    
